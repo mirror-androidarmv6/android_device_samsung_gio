@@ -15,6 +15,7 @@
 ## Inherit vendor proprietary files
 $(call inherit-product, vendor/samsung/gio/vendor_blobs.mk)
 $(call inherit-product, vendor/google/gapps_armv6_tiny.mk)
+$(call inherit-product, device/mdpi-common/mdpi.mk)
 
 include device/samsung/msm7x27-common/common.mk
 
