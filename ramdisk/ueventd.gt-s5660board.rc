@@ -69,11 +69,14 @@
 ## Bluetoth
 /dev/ttyHS0		     0666  bluetooth	net_bt_stack
 
+## Camera
+/dev/msm_camera/*            0777    system      camera
+
 ## Misc
 /dev/oncrpc/*                0660  root      system
 /proc/LinuStoreIII/efs_info  0664  radio     radio
 /proc/LinuStoreIII/keystr    0664  radio     radio
-/dev/pmem_smipool*           0660  system    camera
+/dev/pmem_smipool*           0660  system    audio
 /dev/rtc1                    0660  system    radio
 /dev/qce                     0660  system    audio
 /dev/radio0                  0640  fm_radio  fm_radio
