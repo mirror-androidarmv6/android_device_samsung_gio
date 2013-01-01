@@ -1,0 +1,8 @@
+Change-Id: I60c467a1db2752435607b35a7e519ab92ec74016
+Code-Review+2: Pavel Kirpichyov <pavel.kirpichyov@gmail.com>
+Verified+1: Pavel Kirpichyov <pavel.kirpichyov@gmail.com>
+Submitted-by: Pavel Kirpichyov <pavel.kirpichyov@gmail.com>
+Submitted-at: Tue, 01 Jan 2013 18:09:16 +0100
+Reviewed-on: http://server.cas-online.nl:8181/318
+Project: androidarmv6/android_device_samsung_gio
+Branch: refs/heads/cm-10.1
