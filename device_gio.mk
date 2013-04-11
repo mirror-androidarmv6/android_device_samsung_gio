@@ -22,6 +22,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/samsung/gio/ramdisk/GIO.rle:root/GIO.rle
 
+## Build the ath6kl-compat driver
+BOARD_WLAN_DEVICE := ath6kl_compat
+
 # Inherit products (Most specific first)
 # gio blobs > samsung common(device/vendor) > other blobs
 $(call inherit-product, vendor/samsung/gio/vendor_blobs.mk)
