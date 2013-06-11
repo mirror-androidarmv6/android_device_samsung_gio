@@ -2,6 +2,7 @@ on early-init
     start ueventd
 
 on init
+
     export PATH /sbin:/system/sbin:/system/bin:/system/xbin
     export LD_LIBRARY_PATH /system/lib
     export ANDROID_ROOT /system
@@ -20,6 +21,16 @@ on init
     mkdir /cache
     mkdir /efs
     mount /tmp /tmp tmpfs
+
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 04e8
+    write /sys/class/android_usb/android0/idProduct 685e
+    write /sys/class/android_usb/android0/functions mass_storage,adb
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    setprop mass_storage,adb 
+
+
 
 on early-fs
 
@@ -57,10 +68,15 @@ service ueventd /sbin/ueventd
 service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery
-    disabled
+    enabled
 
 on property:persist.service.adb.enable=1
     start adbd
 
 on property:persist.service.adb.enable=0
     stop adbd
+
+on property:service.adb.root=1
+    write /sys/class/android_usb/android0/enable 0
+    restart adbd
+    write /sys/class/android_usb/android0/enable 1
